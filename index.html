@@ -6,34 +6,48 @@
 -->
 <html>
 	<head>
-		<!-- include head here -->
-		<title>Photography</title>
+		<title>TITLE</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+		<noscript>
+			<link rel="stylesheet" href="assets/css/noscript.css" />
+		</noscript>
 	</head>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const carousel = document.querySelectorAll('.carousel');
+			// var carouselInst = M.Carousel.init(carousel[0].M_Carousel, {indicators: true, fullWidth: true});
+			const carouselInst = M.Carousel.init(carousel, {indicators: true, fullWidth: true});
+			console.log(carouselInst)
+			window.setInterval(() => {
+				const carousel = document.querySelectorAll('.carousel');
+				console.log(carousel);
+				const instance = M.Carousel.getInstance(carousel[0]);
+				console.log(instance);
+				instance.next();
+			}, 4000)
+		});
+	</script>
 	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
-				<!-- include nav + header -->
-								<!-- Header -->
+		<div id="wrapper">
+							<!-- Header -->
 					<header id="header">
 						<div class="inner">
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/heart.svg" alt="" /></span><span class="title">Pickchas</span>
+									<span class="symbol"><img src="images/heart.svg" alt="" /></span><span class="title">Title</span>
 								</a>
 
 							<!-- Nav -->
-								<nav>
+								<div class="nav">
 									<ul>
 										<li><a href="#menu">Menu</a></li>
 									</ul>
-								</nav>
+								</div>
 
 						</div>
 					</header>
@@ -43,73 +57,48 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<!-- <li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
-							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="#">Ipsum veroeros</a></li>
+							<li><a href="#">Tempus etiam</a></li>
+							<!-- <<li><a href="generic.html">Consequat dolor</a></li>
 							<li><a href="elements.html">Elements</a></li> -->
 						</ul>
 					</nav>
 
-
-          <div id="main">
-            <div class="inner">
-
-							<header>
-								<h1>Heres an H1 header</h1>
-								<p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
-							</header>
-
-							<section class="tiles">
-                <!-- for each album take a blurb text
-                  and the first img to make grid -->
-								
-									<article>
-										<span class="image">
-											<img src="images/albums/album1/000001.JPG" alt="" />
-										</span>
-										<a href="src/pages/album1/albumPage.html">
-											<!-- <h2>Img</h2> -->
-											<div class="content">
-												<p>the content</p>
-											</div>
-										</a>
-									</article>
-								
-									<article>
-										<span class="image">
-											<img src="images/albums/album2/000012.JPG" alt="" />
-										</span>
-										<a href="src/pages/album2/albumPage.html">
-											<!-- <h2>Img</h2> -->
-											<div class="content">
-												<p>the content</p>
-											</div>
-										</a>
-									</article>
-								
-									<article>
-										<span class="image">
-											<img src="images/albums/album3/pic01.jpg" alt="" />
-										</span>
-										<a href="src/pages/album3/albumPage.html">
-											<!-- <h2>Img</h2> -->
-											<div class="content">
-												<p>the content</p>
-											</div>
-										</a>
-									</article>
-								
-							</section>
-            </div>
-          </div>
-
-				<!-- include footer -->
+			<div id="main">
+				<div class="inner">
+					<header>
+						<h1>H1 header</h1>
+						<p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+					</header>
+					<div class="carousel carousel-slider">
+						
+								<div class='img-overlay'>
+							<a class="carousel-item" href="src/pages/album1/albumPage.html">
+								<img src="images/albums/album1/000001.JPG" alt="">
+							</a>
+							</div>
+							
+								<div class='img-overlay'>
+							<a class="carousel-item" href="src/pages/album2/albumPage.html">
+								<img src="images/albums/album2/000012.JPG" alt="">
+							</a>
+							</div>
+							
+								<div class='img-overlay'>
+							<a class="carousel-item" href="src/pages/album3/albumPage.html">
+								<img src="images/albums/album3/pic01.jpg" alt="">
+							</a>
+							</div>
+							
+						</div>
+					</div>
+				</div>
 				
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>Get in touch</h2>
+								<h2>Header</h2>
 								<form method="post" action="#">
 									<div class="fields">
 										<div class="field half">
@@ -128,7 +117,7 @@
 								</form>
 							</section>
 							<section>
-								<h2>Follow</h2>
+								<h2>Header</h2>
 								<ul class="icons">
 									<!-- <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li> -->
@@ -149,9 +138,9 @@
 			</div>
 
 			<!-- Scripts -->
-			<script type="text/javascript" src="js/materialize.min.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
+			<script type="text/javascript" src="assets/js/materialize.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
