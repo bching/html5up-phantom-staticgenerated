@@ -83,7 +83,6 @@ for(const key of Object.keys(dataConfig)) {
     });
   });
 }
-console.log(dataConfig['albumPeeks'])
 
 ejsRenderFile('./src/indexLayout.ejs', { albumPeeks: dataConfig['albumPeeks'] })
   .then(indexPage => {
