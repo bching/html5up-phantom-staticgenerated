@@ -2364,6 +2364,13 @@ input, select, textarea {
 
 /* Image */
 
+.img-overlay {
+	transition: 0.5s;
+}
+.img-overlay:hover {
+	opacity: 0.3;
+}
+
 	.image {
 		border-radius: 4px;
 		border: 0;

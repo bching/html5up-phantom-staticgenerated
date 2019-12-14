@@ -42,9 +42,11 @@
 					</header>
 					<div class="carousel carousel-slider">
 						<% albumPeeks.forEach((peek) => { %>
+								<div class='img-overlay'>
 							<a class="carousel-item" href="src/pages/<%= peek.link %>">
 								<img src="images/albums/<%= peek.img %>" alt="">
 							</a>
+							</div>
 							<% }); %>
 						</div>
 					</div>
