@@ -6,57 +6,58 @@
 -->
 <html>
 	<head>
-		<!-- include head here -->
-		<title>Photography</title>
+		<title>TITLE</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+		<noscript>
+			<link rel="stylesheet" href="assets/css/noscript.css" />
+		</noscript>
 	</head>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const carousel = document.querySelectorAll('.carousel');
+			// var carouselInst = M.Carousel.init(carousel[0].M_Carousel, {indicators: true, fullWidth: true});
+			const carouselInst = M.Carousel.init(carousel, {indicators: true, fullWidth: true});
+			console.log(carouselInst)
+			window.setInterval(() => {
+				const carousel = document.querySelectorAll('.carousel');
+				console.log(carousel);
+				const instance = M.Carousel.getInstance(carousel[0]);
+				console.log(instance);
+				instance.next();
+			}, 4000)
+		});
+	</script>
 	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
-				<!-- include nav + header -->
-				<% include ./partials/nav %>
-
-          <div id="main">
-            <div class="inner">
-
-							<header>
-								<h1>Heres an H1 header</h1>
-								<p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
-							</header>
-
-							<section class="tiles">
-                <!-- for each album take a blurb text
-                  and the first img to make grid -->
-								<% albumPeeks.forEach((peek) => { %>
-									<article>
-										<span class="image">
-											<img src="<%= 'images/albums/' + peek.img %>" alt="" />
-										</span>
-										<a href="<%= 'src/pages/' + peek.link %>">
-											<!-- <h2>Img</h2> -->
-											<div class="content">
-												<p>the content</p>
-											</div>
-										</a>
-									</article>
-								<% }); %>
-							</section>
-            </div>
-          </div>
-
-				<!-- include footer -->
+		<div id="wrapper">
+			<% include ./partials/nav %>
+			<div id="main">
+				<div class="inner">
+					<header>
+						<h1>H1 header</h1>
+						<p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+					</header>
+					<div class="carousel carousel-slider">
+						<% albumPeeks.forEach((peek) => { %>
+								<div class='img-overlay'>
+							<a class="carousel-item" href="src/pages/<%= peek.link %>">
+								<img src="images/albums/<%= peek.img %>" alt="">
+							</a>
+							</div>
+							<% }); %>
+						</div>
+					</div>
+				</div>
 				<% include ./partials/footer %>
 			</div>
 
 			<!-- Scripts -->
-			<script type="text/javascript" src="js/materialize.min.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
+			<script type="text/javascript" src="assets/js/materialize.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
